@@ -25,12 +25,14 @@ app = Flask(__name__)
 @app.route("/")
 def welcome():
     """List all available api routes."""
+    print("Retrieving homepage")
     return render_template("index.html")
 
 
 @app.route("/api/v1.0/all")
 def all():
     """Return a list of all passenger names"""
+    print("Retrieving justice league API")
     # Query all passengers
     results = session.query(Justice).all()
 
@@ -58,4 +60,4 @@ def names():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
