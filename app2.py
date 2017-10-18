@@ -1,12 +1,12 @@
 from flask import Flask, jsonify
-from os
+from config import connection
 import numpy as np
 import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
 
-engine = create_engine(os.environ.get("mysql_connection"))
+engine = create_engine(connection["mysql_connection"])
 
 # reflect an existing database into a new model
 Base = automap_base()

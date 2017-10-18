@@ -1,5 +1,5 @@
-from flask import Flask, jsonify
-from os
+from flask import Flask, jsonify, render_template
+import os
 import numpy as np
 import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
@@ -25,11 +25,7 @@ app = Flask(__name__)
 @app.route("/")
 def welcome():
     """List all available api routes."""
-    return (
-        f"Available Routes:<br/>"
-        f"/api/v1.0/names<br/>"
-        f"/api/v1.0/passengers"
-    )
+    return render_template("index.html")
 
 
 @app.route("/api/v1.0/all")
