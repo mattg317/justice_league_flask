@@ -11,11 +11,6 @@ print(var_it)
 
 engine = create_engine(os.environ.get("mysql_connection"))
 
-
-from config import connection
-engine = create_engine(connection["mysql_connection"])
-print(os.environ)
-
 # reflect an existing database into a new model
 Base = automap_base()
 # reflect the tables
