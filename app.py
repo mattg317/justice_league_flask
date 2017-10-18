@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, render_template
 
 justice_league_members = [
     {"superhero": "Aquaman", "real_name": "Arthur Curry"},
@@ -34,6 +34,11 @@ def welcome():
         f"Available Routes:<br/>"
         f"/api/v1.0/justice-league"
     )
+
+@app.route("/hello")
+def myHTML():
+    print("Hitting those templates")
+    return render_template("index.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
