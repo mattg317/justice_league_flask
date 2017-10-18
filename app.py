@@ -6,7 +6,15 @@ from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
 
+var_it = os.environ.get("mysql_connection")
+print(var_it)
+
 engine = create_engine(os.environ.get("mysql_connection"))
+
+
+from config import connection
+engine = create_engine(connection["mysql_connection"])
+print(os.environ)
 
 # reflect an existing database into a new model
 Base = automap_base()
