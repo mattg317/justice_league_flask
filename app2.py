@@ -41,10 +41,10 @@ def all():
     # Convert list of tuples into normal list
     all_superheros = []
     for superhero in results:
-        superhero_dict = {}
-        superhero_dict["superhero"] = superhero.superhero
-        superhero_dict["real_name"] = superhero.real_name
-        all_superheros.append(superhero_dict)
+    	superhero_dict = {}
+    	superhero_dict["superhero"] = superhero.superhero
+    	superhero_dict["real_name"] = superhero.real_name
+    	all_superheros.append(superhero_dict)
 
     return jsonify(all_superheros)
 
